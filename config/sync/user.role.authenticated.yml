@@ -9,7 +9,9 @@ label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
+  - 'access administration pages'
   - 'access content'
+  - 'administer users'
   - 'create audiobook content'
   - 'delete any audiobook content'
   - 'delete own audiobook content'
