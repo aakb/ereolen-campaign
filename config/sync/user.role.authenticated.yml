@@ -9,8 +9,11 @@ label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
-  - 'access administration pages'
   - 'access content'
+  - 'access content overview'
+  - 'access itk hero'
+  - 'access toolbar'
+  - 'administer nodes'
   - 'administer users'
   - 'create audiobook content'
   - 'delete any audiobook content'
