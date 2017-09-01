@@ -1,0 +1,22 @@
+uuid: 2097261a-e3c5-445b-a162-65f54b91ab3b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ereolen_campaign
+_core:
+  default_config_hash: 5MNdk3fpMKx_xxBTcz2T11DL4XEU1H5SgHl8BsYdFsA
+id: ereolen_campaign_messages
+theme: ereolen_campaign
+region: content
+weight: -2
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

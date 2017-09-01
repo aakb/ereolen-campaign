@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Display of frontpage header block
+ *
+ * Available variables:
+  * - variables: Holds variables.
+  *   - itk_hero_lead: Lead text.
+  *   - itk_hero_sub: Sub text.
+*/
+#}
+
+{% set hero = {
+    "lead": variables.itk_hero_lead,
+    "sub": variables.itk_hero_sub
+  }
+%}
+<div class="row">
+  <div class="col-12">
+    <h1 class="hero--header">{{ hero.lead }}</h1>
+    <div class="hero--content">{{ hero.sub }}</div>
+  </div>
+</div>

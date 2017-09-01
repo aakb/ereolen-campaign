@@ -1,0 +1,35 @@
+uuid: cae3bf36-2223-4ccb-b8a3-e605a91f638f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.audiobook.field_isbn
+    - field.field.node.audiobook.field_teaser
+    - node.type.audiobook
+  module:
+    - text
+    - user
+id: node.audiobook.teaser
+targetEntityType: node
+bundle: audiobook
+mode: teaser
+content:
+  field_isbn:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_teaser:
+    type: text_default
+    weight: 0
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  links: true

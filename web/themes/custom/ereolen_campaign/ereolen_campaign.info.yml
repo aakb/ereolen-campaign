@@ -1,0 +1,13 @@
+core: 8.x
+type: theme
+
+name: 'Ereolen campaign theme'
+description: 'Uses the Bootstrap framework'
+package: 'ITK'
+
+regions:
+  header: 'Top Bar'
+  content: 'Content'
+
+libraries:
+  - 'ereolen_campaign/global-styling'

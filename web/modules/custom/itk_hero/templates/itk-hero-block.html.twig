@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Display of frontpage header block
+ *
+ * Available variables:
+  * - variables: Holds variables.
+  *   - itk_hero_lead: Lead text.
+  *   - itk_hero_sub: Sub text.
+  *   - itk_hero_image: Returns true if image is set.
+  *   - itk_hero_image_url:  Image url.
+  *   - itk_hero_cta_button: Call to action button label.
+  *   - itk_hero_cta_link: Call to action button link.
+  *   - itk_hero_button: Button label.
+  *   - itk_hero_link: Button link.
+ */
+#}
+
+{% set hero = {
+  "lead": variables.itk_hero_lead,
+  "sub": variables.itk_hero_sub
+}
+%}

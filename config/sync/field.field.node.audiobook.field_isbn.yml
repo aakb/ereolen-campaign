@@ -1,0 +1,19 @@
+uuid: 140eb241-d9ac-4b71-a3df-9bc9d5809404
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_isbn
+    - node.type.audiobook
+id: node.audiobook.field_isbn
+field_name: field_isbn
+entity_type: node
+bundle: audiobook
+label: ISBN
+description: "ISBN nummer til lydbogen.\r\nHerudfra dannes linket til lydbogen."
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

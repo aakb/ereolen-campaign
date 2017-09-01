@@ -1,0 +1,6 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    '//fonts.googleapis.com/css?family=Oxygen': { type: external, minified: true }

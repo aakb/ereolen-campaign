@@ -1,0 +1,20 @@
+uuid: 2667f91d-980b-48f0-a9a9-19429ef25107
+langcode: da
+status: true
+dependencies:
+  module:
+    - itk_hero
+  theme:
+    - ereolen_campaign
+id: itkhero
+theme: ereolen_campaign
+region: content
+weight: -1
+provider: null
+plugin: itk_hero
+settings:
+  id: itk_hero
+  label: 'ITK hero'
+  provider: itk_hero
+  label_display: '0'
+visibility: {  }

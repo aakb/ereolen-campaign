@@ -1,0 +1,42 @@
+/**
+*
+* Region styles.
+* ==============================================
+*/
+
+
+.region {
+  margin-top: 2em;
+
+  &--header-image {
+    box-sizing: border-box;
+    max-width: 330px;
+    padding: 0 20px;
+    width: 100%;
+  }
+}
+
+.logo {
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.row {
+  margin-bottom: 2em;
+}
+
+.hero--content,
+.hero--header {
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.article {
+  box-sizing: border-box;
+  padding: 0 1em;
+  margin-bottom: 2em;
+}
+
+.sound-icon {
+  width: 80px;
+}

@@ -1,0 +1,21 @@
+uuid: 8571c8fd-3fc8-4a6f-b5ec-0860cf4c1e58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser
+    - node.type.audiobook
+  module:
+    - text
+id: node.audiobook.field_teaser
+field_name: field_teaser
+entity_type: node
+bundle: audiobook
+label: 'Teaser text'
+description: 'Kort teaser til linket'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

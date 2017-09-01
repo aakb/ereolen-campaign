@@ -1,0 +1,11 @@
+uuid: d18c6498-15dc-4a3f-b52c-c5f2cde30c82
+langcode: en
+status: true
+dependencies: {  }
+name: Lydbog
+type: audiobook
+description: 'En reference til en lydbog'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

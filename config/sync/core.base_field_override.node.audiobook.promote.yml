@@ -1,0 +1,22 @@
+uuid: 84456f96-501f-4ee7-857f-efbf39dc61b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.audiobook
+id: node.audiobook.promote
+field_name: promote
+entity_type: node
+bundle: audiobook
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
