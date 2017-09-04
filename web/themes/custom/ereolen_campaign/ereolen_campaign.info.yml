@@ -11,3 +11,4 @@ regions:
 
 libraries:
   - 'ereolen_campaign/global-styling'
+  - 'ereolen_campaign/fonts'

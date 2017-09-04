@@ -39,11 +39,26 @@ class ITKHeroContentForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->getBaseConfig();
 
+    // Header wrapper
+    $form['wrapper_header'] = [
+      '#title' => t('ITK Header'),
+      '#type' => 'details',
+      '#weight' => '1',
+      '#open' => TRUE,
+    ];
+
+    $form['wrapper_header']['itk_header_text'] = [
+      '#title' => t('Header text'),
+      '#type' => 'textfield',
+      '#default_value' => $config->get('itk_header_text'),
+      '#weight' => '2',
+    ];
+
     // Add front page wrapper.
     $form['wrapper'] = [
       '#title' => t('ITK Hero'),
       '#type' => 'details',
-      '#weight' => '1',
+      '#weight' => '2',
       '#open' => TRUE,
     ];
 
@@ -81,6 +96,7 @@ class ITKHeroContentForm extends FormBase {
 
     // Set the rest of the configuration values.
     $this->getBaseConfig()->setMultiple([
+      'itk_header_text' => $form_state->getValue('itk_header_text'), // Used in .theme file
       'itk_hero_lead' => $form_state->getValue('itk_hero_lead'),
       'itk_hero_sub' => $form_state->getValue('itk_hero_sub')['value'],
     ]);
