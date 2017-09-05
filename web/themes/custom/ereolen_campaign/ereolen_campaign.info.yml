@@ -12,3 +12,4 @@ regions:
 libraries:
   - 'ereolen_campaign/global'
   - 'ereolen_campaign/fonts'
+  - 'core/drupal'
