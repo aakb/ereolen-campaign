@@ -10,5 +10,5 @@ regions:
   content: 'Content'
 
 libraries:
-  - 'ereolen_campaign/global-styling'
+  - 'ereolen_campaign/global'
   - 'ereolen_campaign/fonts'

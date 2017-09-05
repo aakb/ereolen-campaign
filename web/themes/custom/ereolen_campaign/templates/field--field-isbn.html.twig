@@ -46,7 +46,7 @@
     </div>
   {% else %}
     {% for item in items %}
-      <div{{ item.attributes }}><a href="http://lyttestation.pubhub.dk/{{ item.content['#context']['value'] }}.mp3"><img class="sound-icon" src="{{ directory }}/icons/sound.svg"></a></div>
+      <div{{ item.attributes }}><div class="js-open-frame open-frame" data-toggle="modal" data-src="https://play.pubhub.dk/lyttestation.html?i={{ item.content['#context']['value'] }}"><img class="sound-icon" src="{{ directory }}/icons/sound.svg"></div></div>
     {% endfor %}
   {% endif %}
 {% else %}

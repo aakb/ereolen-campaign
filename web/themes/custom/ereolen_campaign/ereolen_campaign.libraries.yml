@@ -1,7 +1,13 @@
-global-styling:
+global:
   css:
     theme:
       css/style.css: {}
+  js:
+    js/open-frame.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupalSettings
 
 fonts:
   license:

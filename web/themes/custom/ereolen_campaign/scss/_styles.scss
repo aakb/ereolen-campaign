@@ -1,0 +1,125 @@
+/**
+*
+* Styles.
+* ==============================================
+*/
+
+body {
+  background: $background-color;
+  color: $text-color;
+}
+
+/* Header */
+
+.header--break {
+  background: $header-break-color;
+  height: 60px;
+  width: 100%;
+}
+
+.header--text {
+  align-self: center;
+  font-size: 2em;
+  padding: 10px;
+  text-align: center;
+  background: $white;
+
+  @include media-breakpoint-up(sm) {
+    background: none;
+    padding: 0;
+    text-align: right;
+  }
+}
+
+.region-header {
+  padding: 0;
+
+  @include media-breakpoint-up(sm) {
+    padding: 0 15px;
+  }
+}
+
+.logo {
+  background: $logo-color;
+  box-sizing: border-box;
+  display: block;
+  height: 96px;
+
+  &--wrapper {
+    max-width: 100%;
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      width: 280px;
+    }
+  }
+
+  img {
+    width: 100%;
+    display: block;
+    max-width: 250px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+}
+
+/* Content */
+
+.content {
+  background-color: $white;
+  margin: 20px 0;
+}
+
+.content-wrapper {
+  margin-top: 20px;
+}
+
+.hero--content,
+.hero--header {
+  box-sizing: border-box;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.article {
+  box-sizing: border-box;
+  padding: 0 15px;
+  margin: 1.7em 1.5em;
+}
+
+.sound-icon {
+  width: 80px;
+}
+
+
+/* Player */
+
+.player-frame {
+  @extend %itk--menu-nav-overlay;
+}
+
+.player-content{
+  @include modal-dialog();
+}
+
+.player-header {
+  background: $background-color;
+  display: flex;
+
+  .logo--wrapper {
+    flex: 0 0 280px;
+  }
+}
+
+.open-frame {
+  cursor: pointer;
+}
+
+.player-close {
+  cursor: pointer;
+  width: auto;
+  flex: 1 1 auto;
+  align-self: center;
+  text-align: right;
+  padding-right: 2em;
+}
