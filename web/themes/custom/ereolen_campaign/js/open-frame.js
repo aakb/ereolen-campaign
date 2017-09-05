@@ -1,4 +1,4 @@
-(function ($, Drupal) {
+(function ($) {
   Drupal.behaviors.ereolenCampaign = {
     attach: function (context, settings) {
       var iframe = $("#player");
@@ -14,4 +14,4 @@
       });
     }
   }
-})(jQuery, Drupal);
+})(jQuery);
