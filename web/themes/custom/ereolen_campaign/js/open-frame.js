@@ -6,6 +6,7 @@
         var link_src = $(this).attr('data-src');
         iframe.attr("src", link_src);
         $(".js-frame").toggleClass('is-visible');
+        ga('send', 'event', 'Audio', 'play', link_src);
       });
 
       $(".js-frame-close").click(function () {
