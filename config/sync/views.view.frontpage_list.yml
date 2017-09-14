@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - entityqueue.entity_queue.order
     - node.type.audiobook
   module:
+    - entityqueue
     - node
     - user
 id: frontpage_list
@@ -146,6 +148,19 @@ display:
           entity_field: type
           plugin_id: bundle
       sorts:
+        entityqueue_relationship:
+          id: entityqueue_relationship
+          table: node_field_data
+          field: entityqueue_relationship
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: node
+          plugin_id: entity_queue_position
         title:
           id: title
           table: node_field_data
@@ -175,7 +190,18 @@ display:
           tokenize: false
           content: 'Ingen lydbøger tilgængelige'
           plugin_id: text_custom
-      relationships: {  }
+      relationships:
+        entityqueue_relationship:
+          id: entityqueue_relationship
+          table: node_field_data
+          field: entityqueue_relationship
+          relationship: none
+          group_type: group
+          admin_label: 'Content queue'
+          required: false
+          limit_queue: order
+          entity_type: node
+          plugin_id: entity_queue
       arguments: {  }
       display_extenders: {  }
     cache_metadata:
@@ -186,7 +212,10 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:entityqueue.entity_queue.order'
+        - entity_field_info
+        - views_data
   page_1:
     display_plugin: page
     id: page_1
@@ -203,4 +232,7 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:entityqueue.entity_queue.order'
+        - entity_field_info
+        - views_data

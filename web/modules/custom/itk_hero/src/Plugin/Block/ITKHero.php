@@ -26,6 +26,10 @@ class ITKHero extends BlockBase {
   public function build() {
     $config = \Drupal::getContainer()->get('itk_hero.config')->getAll();
 
+    // Fetch header top file.
+    $file = isset($config['itk_header_image']) ? File::load($config['itk_header_image']) : FALSE;
+    $config['itk_header_image_url'] = $file ? $file->url() : '';
+
     return [
       '#type' => 'markup',
       '#theme' => 'itk_hero_block',

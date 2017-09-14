@@ -1,0 +1,25 @@
+uuid: 912421bf-88cc-48b9-bc4e-05071b01fe3c
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+id: order
+label: 'Order of elements'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      audiobook: audiobook
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse_in_admin: false

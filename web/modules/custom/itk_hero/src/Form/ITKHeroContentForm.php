@@ -47,11 +47,25 @@ class ITKHeroContentForm extends FormBase {
       '#open' => TRUE,
     ];
 
-    $form['wrapper_header']['itk_header_text'] = [
-      '#title' => t('Header text'),
-      '#type' => 'textfield',
-      '#default_value' => $config->get('itk_header_text'),
-      '#weight' => '2',
+    $fids = [];
+    if (!empty($input)) {
+      if (!empty($input['itk_header_image'])) {
+        $fids[0] = $form_state->getValue('itk_header_image');
+      }
+    }
+    else {
+      $fids[0] = $config->get('itk_header_image', '');
+    }
+
+    $form['wrapper_header']['itk_header_image'] = [
+      '#title' => t('Header image'),
+      '#type' => 'managed_file',
+      '#default_value' => ($fids[0]) ? $fids : '',
+      '#upload_location' => 'public://',
+      '#required' => true,
+      '#weight' => '3',
+      '#open' => TRUE,
+      '#description' => t('The image used for the header.'),
     ];
 
     // Add front page wrapper.
@@ -94,13 +108,57 @@ class ITKHeroContentForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     drupal_set_message('Settings saved');
 
+    // Fetch the file id previously saved.
+    $config = $this->getBaseConfig();
+    $old_fid = $config->get('itk_header_image', '');
+
+    // Load the file set in the form.
+    $value = $form_state->getValue('itk_header_image');
+    $form_fid = count($value) > 0 ? $value[0] : 0;
+    $file = ($form_fid) ? File::load($form_fid) : FALSE;
+
+    // If a file is set.
+    if ($file) {
+      $fid = $file->id();
+      // Check if the file has changed.
+      if ($fid != $old_fid) {
+
+        // Remove old file.
+        if ($old_fid) {
+          $this->removeFile($old_fid);
+        }
+
+        // Add file to file_usage table.
+        \Drupal::service('file.usage')->add($file, 'itk_header', 'user', '1');
+      }
+    }
+    else {
+      // If old file exists but no file set in form, remove old file.
+      if ($old_fid) {
+        $this->removeFile($old_fid);
+      }
+    }
+
     // Set the rest of the configuration values.
     $this->getBaseConfig()->setMultiple([
-      'itk_header_text' => $form_state->getValue('itk_header_text'), // Used in .theme file
+      'itk_header_image' => $file ? $file->id() : NULL,
       'itk_hero_lead' => $form_state->getValue('itk_hero_lead'),
       'itk_hero_sub' => $form_state->getValue('itk_hero_sub')['value'],
     ]);
 
     drupal_flush_all_caches();
+  }
+
+
+  /**
+   * Deletes a a file from file usage table.
+   *
+   * @param int $fid
+   *   The file id of the file to delete.
+   */
+  private function removeFile($fid) {
+    // Load and delete old file.
+    $file = File::load($fid);
+    \Drupal::service('file.usage')->delete($file, 'itk_header', 'user', '1', '1');
   }
 }

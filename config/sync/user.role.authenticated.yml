@@ -9,10 +9,12 @@ label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
+  - 'access administration pages'
   - 'access content'
   - 'access content overview'
   - 'access itk hero'
   - 'access toolbar'
+  - 'administer entityqueue'
   - 'administer nodes'
   - 'administer users'
   - 'create audiobook content'
@@ -20,4 +22,5 @@ permissions:
   - 'delete own audiobook content'
   - 'edit any audiobook content'
   - 'edit own audiobook content'
+  - 'update order entityqueue'
   - 'view the administration theme'

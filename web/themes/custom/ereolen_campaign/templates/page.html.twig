@@ -48,9 +48,7 @@
   <header role="banner">
     {{ page.header }}
   </header>
-  <div class="header--break">
-
-  </div>
+  <div class="break"></div>
   {{ page.primary_menu }}
   {{ page.secondary_menu }}
 
@@ -80,11 +78,12 @@
     {% endif %}
 
   </main>
-
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
-
+  <div class="break"></div>
+  <footer role="contentinfo" class="container region-header">
+    <div class="row align-items-end no-gutters">
+      <div class="col-12 col-sm-12 footer--image">
+        <img src="/{{ directory }}/bibliotekerne-logo.png">
+      </div>
+    </div>
+  </footer>
 </div>{# /.layout-container #}

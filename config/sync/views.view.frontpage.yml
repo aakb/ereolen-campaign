@@ -5,7 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.rss
     - core.entity_view_mode.node.teaser
+    - entityqueue.entity_queue.order
   module:
+    - entityqueue
     - node
     - user
 _core:
@@ -211,21 +213,19 @@ display:
           plugin_id: boolean
           entity_type: node
           entity_field: sticky
-        created:
-          field: created
-          id: created
-          order: DESC
+        entityqueue_relationship:
+          id: entityqueue_relationship
           table: node_field_data
-          plugin_id: date
+          field: entityqueue_relationship
           relationship: none
           group_type: group
           admin_label: ''
+          order: ASC
           exposed: false
           expose:
             label: ''
-          granularity: second
           entity_type: node
-          entity_field: created
+          plugin_id: entity_queue_position
       style:
         type: default
         options:
@@ -236,7 +236,18 @@ display:
       title: ''
       header: {  }
       footer: {  }
-      relationships: {  }
+      relationships:
+        entityqueue_relationship:
+          id: entityqueue_relationship
+          table: node_field_data
+          field: entityqueue_relationship
+          relationship: none
+          group_type: group
+          admin_label: 'Content queue'
+          required: false
+          limit_queue: order
+          entity_type: node
+          plugin_id: entity_queue
       fields: {  }
       arguments: {  }
       display_extenders: {  }
@@ -251,7 +262,10 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       max-age: -1
-      tags: {  }
+      tags:
+        - 'config:entityqueue.entity_queue.order'
+        - entity_field_info
+        - views_data
   feed_1:
     display_plugin: feed
     id: feed_1
@@ -286,7 +300,10 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       max-age: -1
-      tags: {  }
+      tags:
+        - 'config:entityqueue.entity_queue.order'
+        - entity_field_info
+        - views_data
   page_1:
     display_options:
       path: node
@@ -302,4 +319,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       max-age: -1
-      tags: {  }
+      tags:
+        - 'config:entityqueue.entity_queue.order'
+        - entity_field_info
+        - views_data
