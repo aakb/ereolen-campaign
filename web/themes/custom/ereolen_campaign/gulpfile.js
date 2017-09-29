@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // ---- Changeable variables --- //
-var themename = 'lejlighed';
-var local_domain_name = 'lejlighed.vm';
+var themename = 'ereolen_campaign';
+var local_domain_name = 'ereolen_campaign.vm';
 // ---- Changeable variables end --- //
 
 // Plugin to handle parameters.
@@ -56,7 +56,7 @@ var browserSync;
  */
 var configuration = {
   // Base theme.
-  'lejlighed': {
+  'ereolen_campaign': {
     "js": {
       "paths": ['./js/*.js', '!./js/*.min.*'],
       "dest": './js'
