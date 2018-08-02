@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - itk_hero
+    - system
   theme:
     - ereolen_campaign
 id: itkhero
@@ -17,4 +18,9 @@ settings:
   label: 'ITK hero'
   provider: itk_hero
   label_display: '0'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

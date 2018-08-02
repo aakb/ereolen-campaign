@@ -1,0 +1,66 @@
+{#
+/**
+ * @file
+ * Theme override to display a single Drupal page while offline.
+ *
+ * All available variables are mirrored in page.html.twig.
+ * Some may be blank but they are provided for consistency.
+ *
+ * @see template_preprocess_maintenance_page()
+ */
+#}
+
+<div class="layout-container">
+  <header role="banner">
+    <div class="container region-header">
+      <div class="row no-gutters">
+        <div class="col-12 col-sm-6">
+          <div id="block-ereolen-campaign-branding">
+            <div class="logo--wrapper">
+              {% if logo %}
+                <a href="{{ front_page }}" class="logo" title="{{ 'Home'|t }}" rel="home">
+                  <img src="{{ logo }}" alt="{{ 'Home'|t }}"/>
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="break"></div>
+  {{ page.primary_menu }}
+  {{ page.secondary_menu }}
+
+  {{ page.breadcrumb }}
+
+  {{ page.highlighted }}
+
+  {{ page.help }}
+
+  <main role="main">
+    <div class="container region region-content">
+      <div class="layout-content">
+        <div class="row content">
+          <div class="col-12">
+            {% if title %}
+              <h1 class="hero--header" style="overflow:hidden;">{{ title }}</h1>
+            {% endif %}
+            <div class="hero--content" style="min-height:600px;">
+              {{ page.highlighted }}
+              {{ page.content }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="break"></div>
+  <footer role="contentinfo" class="container region-header">
+    <div class="row align-items-end no-gutters">
+      <div class="col-12 col-sm-12 footer--image">
+        <img src="/{{ directory }}/bibliotekerne-logo.png">
+      </div>
+    </div>
+  </footer>
+</div>

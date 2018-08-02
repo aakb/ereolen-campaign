@@ -16,6 +16,7 @@ module:
   itk_user_pages_theme: 0
   language: 0
   link: 0
+  locale: 0
   node: 0
   page_cache: 0
   path: 0
@@ -41,3 +42,4 @@ theme:
 profile: minimal
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
+langcode: da

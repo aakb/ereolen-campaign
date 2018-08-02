@@ -1,5 +1,5 @@
 uuid: 8e5e7b66-2415-4561-81d8-32c515995913
-langcode: en
+langcode: da
 status: true
 dependencies: {  }
 _core:
@@ -13,9 +13,11 @@ permissions:
   - 'access content'
   - 'access content overview'
   - 'access itk hero'
+  - 'access site in maintenance mode'
   - 'access toolbar'
   - 'administer entityqueue'
   - 'administer nodes'
+  - 'administer site configuration'
   - 'administer users'
   - 'create audiobook content'
   - 'delete any audiobook content'
