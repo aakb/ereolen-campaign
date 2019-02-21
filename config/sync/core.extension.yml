@@ -23,10 +23,10 @@ module:
   pathauto: 0
   redirect: 0
   system: 0
+  system_status: 0
   text: 0
   token: 0
   toolbar: 0
-  update: 0
   user: 0
   views: 0
   views_ui: 0
