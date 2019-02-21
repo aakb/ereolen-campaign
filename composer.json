@@ -33,6 +33,7 @@
         "drupal/itk-user-pages-theme": "^1.0",
         "drupal/pathauto": "^1.0",
         "drupal/redirect": "^1.0@beta",
+        "drupal/system_status": "^2.8",
         "drush/drush": "~8.0",
         "webflo/drupal-finder": "^0|^1.0.0",
         "webmozart/path-util": "^2.3"
